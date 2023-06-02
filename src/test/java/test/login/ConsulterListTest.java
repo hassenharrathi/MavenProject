@@ -1,4 +1,4 @@
-package login;
+package test.login;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -9,10 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AcceuilPage;
 import pages.LoginPage;
 import pages.MenuPage;
+import preTest.BaseTest;
+
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class ConsulterListTest {
+public class ConsulterListTest extends BaseTest {
     @Test
     void testList() {
 
@@ -20,12 +22,7 @@ public class ConsulterListTest {
         String username = "hassenharrathi@yahoo.fr";
         String password = "Ch*1982*";
 
-        //WebDriver
-        WebDriver driver = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(100));
-
-        //Adresse site web
-        driver.get("https://www.tutorialspoint.com/about/about_careers.htm");
 
         //Instanciation
         LoginPage loginPage = new LoginPage(driver);
@@ -51,8 +48,6 @@ public class ConsulterListTest {
         // Déconnexion
         acceuilPage.getLogOut().click();
         acceuilPage.getSignOut().click();
-
-        driver.quit();
 
     }
 }
