@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ConsulterListTest extends BaseTest {
     @Test
-    void testList() {
+    void testList() throws InterruptedException {
 
         //Déclaration attributs
         String username = "hassenharrathi@yahoo.fr";
@@ -46,6 +46,7 @@ public class ConsulterListTest extends BaseTest {
         menu.getListPanel().click();
 
         // Déconnexion
+        Thread.sleep(5000);
         acceuilPage.getLogOut().click();
         acceuilPage.getSignOut().click();
 

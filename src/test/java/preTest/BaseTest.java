@@ -21,7 +21,8 @@ public class BaseTest {
     @BeforeAll
      void setup(){
         this.driver = new FirefoxDriver();
-        driver.get("https://www.tutorialspoint.com/about/about_careers.htm");
+        driver.get("https://www.tutorialspoint.com/index.htm");
+
     }
 
     @AfterAll
