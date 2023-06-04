@@ -1,1 +1,3 @@
-login\loginTest.class
+test\login\ConsulterListTest.class
+test\login\LoginTest.class
+preTest\BaseTest.class

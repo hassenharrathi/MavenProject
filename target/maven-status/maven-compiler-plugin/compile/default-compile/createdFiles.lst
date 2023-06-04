@@ -1,1 +1,5 @@
+pages\AcceuilPage.class
+pages\CookiesPage.class
+pages\MenuPage.class
 pages\LoginPage.class
+ressources\Variables.class

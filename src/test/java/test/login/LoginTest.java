@@ -9,19 +9,22 @@ import pages.AcceuilPage;
 import pages.CookiesPage;
 import pages.LoginPage;
 import preTest.BaseTest;
+import resources.Configuration;
+
 import java.time.Duration;
 
+
 public class LoginTest extends BaseTest {
+
     @Test
     void testLogin () {
 
-        // Déclaration attributs
-        String username = "hassenharrathi@yahoo.fr";
-        String password = "Ch*1982*";
-
         // Temps d'attente
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 
+        Configuration configuration = new Configuration();
+        String username = configuration.getUsername("username");
+        String password = configuration.getPassword("password");
         // Instanciation
         LoginPage loginPage = new LoginPage(driver);
         AcceuilPage acceuilPage = new AcceuilPage(driver);
@@ -43,7 +46,8 @@ public class LoginTest extends BaseTest {
         loginPage.getSubmitPanel().click();
 
         // Attente explicite pour la fermeture de la fenêtre contextuelle
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Skip']")));
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Skip']")));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(loginPage.getPopUpPanel())).click();
 
         // Déconnexion
