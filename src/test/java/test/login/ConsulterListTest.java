@@ -20,7 +20,7 @@ public class ConsulterListTest extends BaseTest {
     void testList() throws InterruptedException {
         //Instanciation
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(100));
-        Configuration configuration = new Configuration();
+        Configuration configuration = new Configuration("src/main/java/resources/config.properties");
         String username = configuration.getUsername("username");
         String password = configuration.getPassword("password");
 
@@ -31,7 +31,7 @@ public class ConsulterListTest extends BaseTest {
 
         // Attente explicite pour l'affichage du panneau de cookies
         try{
-            wait.until(ExpectedConditions.elementToBeClickable(cookiesPage.getCookiesPanel())).click();
+            wait.until(ExpectedConditions.elementToBeClickable(cookiesPage.getCloseCookies())).click();
         }catch (NoSuchElementException e){}
 
         // Attente explicite pour l'affichage du panneau de connexion
@@ -39,21 +39,20 @@ public class ConsulterListTest extends BaseTest {
         wait.until(ExpectedConditions.elementToBeClickable(acceuilPage.getConnectionPanel())).click();
 
         // Saisie des identifiants de connexion
-        loginPage.getLoginEmailPanel().sendKeys(username);
-        loginPage.getLoginPswPanel().sendKeys(password);
-        loginPage.getSubmitPanel().click();
+        loginPage.getLoginEmail().sendKeys(username);
+        loginPage.getLoginPsw().sendKeys(password);
+        loginPage.getSubmit().click();
 
         // Attente explicite pour la fermeture de la fenêtre contextuelle
         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Skip']")));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(loginPage.getPopUpPanel())).click();
+        wait.until(ExpectedConditions.elementToBeClickable(loginPage.getPopUp())).click();
 
         // Navigation dans le menu
         menu.getMenuPanel().click();
         menu.getListPanel().click();
 
         // Déconnexion
-        Thread.sleep(5000);
         acceuilPage.getLogOut().click();
         acceuilPage.getSignOut().click();
 

@@ -5,13 +5,14 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Configuration {
-    private static final String CONFIG_FILE = "src/main/java/resources/config.properties";
+    private String CONFIG_FILE;
     private Properties properties;
 
-    public Configuration() {
+    public Configuration(String configFile) {
+        this.CONFIG_FILE = configFile;
         properties = new Properties();
         try {
-            FileInputStream fileInputStream = new FileInputStream(CONFIG_FILE);
+            FileInputStream fileInputStream = new FileInputStream(configFile);
             properties.load(fileInputStream);
             fileInputStream.close();
         } catch (IOException e) {

@@ -16,19 +16,19 @@ public class LoginPage {
 
     }
 
-    public WebElement getLoginEmailPanel() {
+    public WebElement getLoginEmail() {
         return driver.findElement(loginEmailPanel) ;
     }
 
-    public WebElement getLoginPswPanel() {
+    public WebElement getLoginPsw() {
         return driver.findElement(loginPswPanel) ;
     }
 
-    public WebElement getSubmitPanel() {
+    public WebElement getSubmit() {
         return driver.findElement(submitPanel);
     }
 
-    public WebElement getPopUpPanel() {
+    public WebElement getPopUp() {
         return driver.findElement(popUpPanel);
     }
 
