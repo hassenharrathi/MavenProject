@@ -11,6 +11,8 @@ public class LoginPage {
     private final By loginPswPanel = By.id("user_password");
     private final By submitPanel = By.id("user_login");
     private final By popUpPanel = By.xpath("//a[text()='Skip']");
+
+
     public LoginPage(WebDriver driver) {
     this.driver = driver;
 

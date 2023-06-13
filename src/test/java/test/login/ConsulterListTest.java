@@ -2,7 +2,6 @@ package test.login;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AcceuilPage;
@@ -30,13 +29,13 @@ public class ConsulterListTest extends BaseTest {
         CookiesPage cookiesPage = new CookiesPage(driver);
 
         // Attente explicite pour l'affichage du panneau de cookies
-        try{
-            wait.until(ExpectedConditions.elementToBeClickable(cookiesPage.getCloseCookies())).click();
-        }catch (NoSuchElementException e){}
+//        try{
+//            wait.until(ExpectedConditions.elementToBeClickable(cookiesPage.getCloseCookies())).click();
+//        }catch (NoSuchElementException e){}
 
         // Attente explicite pour l'affichage du panneau de connexion
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@href='https://www.tutorialspoint.com/market/login.asp']")));
-        wait.until(ExpectedConditions.elementToBeClickable(acceuilPage.getConnectionPanel())).click();
+        wait.until(ExpectedConditions.elementToBeClickable(acceuilPage.getConnectionButton())).click();
 
         // Saisie des identifiants de connexion
         loginPage.getLoginEmail().sendKeys(username);

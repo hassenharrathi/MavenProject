@@ -20,28 +20,28 @@ public class BaseTest {
 
     @BeforeAll
      void setup(){
-        this.driver = new FirefoxDriver();
+        this.driver = new ChromeDriver();
         driver.get("https://www.tutorialspoint.com/index.htm");
 
     }
 
-    @AfterAll
-    void tearDown() {
-        // Quit the browser
-        if (driver != null) {
-            driver.quit();
-        }
-
-        // Take a screenshot in case of test failure
-        if (driver instanceof TakesScreenshot) {
-            TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
-            try {
-                // Capture the screenshot as a file
-                Path screenshotPath = Paths.get("path/to/screenshot.png");
-                Files.copy(screenshotDriver.getScreenshotAs(OutputType.FILE).toPath(), screenshotPath);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
+//    @AfterAll
+//    void tearDown() {
+//        // Quit the browser
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//
+//        // Take a screenshot in case of test failure
+//        if (driver instanceof TakesScreenshot) {
+//            TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
+//            try {
+//                // Capture the screenshot as a file
+//                Path screenshotPath = Paths.get("path/to/screenshot.png");
+//                Files.copy(screenshotDriver.getScreenshotAs(OutputType.FILE).toPath(), screenshotPath);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 }

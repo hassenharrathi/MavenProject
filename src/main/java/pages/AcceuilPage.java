@@ -3,12 +3,12 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import java.time.Duration;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AcceuilPage {
+
     public WebDriver driver;
-    private final By connectionPanel = By.xpath("//*[@href='https://www.tutorialspoint.com/market/login.asp']");
+    private final By connectionButton = By.xpath("//a[contains(text(),'Login')]");
     private final By logOut = By.id("profileMenu");
     private final By signOut = By.xpath("//a[@class='logout']");
 
@@ -16,8 +16,8 @@ public class AcceuilPage {
         this.driver = driver;
     }
 
-    public WebElement getConnectionPanel() {
-        return driver.findElement(connectionPanel);
+    public WebElement getConnectionButton() {
+        return driver.findElement(connectionButton);
     }
 
     public WebElement getLogOut() {

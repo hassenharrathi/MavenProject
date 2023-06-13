@@ -28,5 +28,9 @@ public class Configuration {
         return properties.getProperty(key);
     }
 
+    public String getMail(String key) {
+        return properties.getProperty(key);
+    }
+
     // Autres méthodes de configuration
 }
