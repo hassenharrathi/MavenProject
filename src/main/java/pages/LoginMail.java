@@ -3,9 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class LoginMail {
 
@@ -17,9 +14,11 @@ public class LoginMail {
     private final By pwdButton = By.xpath("//button[span[text()='Suivant' or text()='Next']]");
     private final By openTask = By.xpath("//div[div/span/a[text()='Test']]");
     private final By openEmail = By.xpath("//td[@Class='yX xY ']");
-    private final By getCode = By.xpath("//tr[5]/td/p");
+    private final By getCode = By.xpath("//tr[5]/td/ p");
     private final By checkBox = By.xpath("//input[@type='checkbox']");
-
+    private final By goBack = By.xpath("//div[contains(@data-tooltip,'Retour')]");
+    private final By selectEmail = By.xpath("(//div[contains(@aria-label,'lectionner')])[1]");
+    private final By deleteEmail = By.xpath("//div[contains(@aria-label,'Supprimer')]");
 
     public LoginMail(WebDriver driver) {
         this.driver = driver;
@@ -61,4 +60,44 @@ public class LoginMail {
     public WebElement getCheckBox() {
         return driver.findElement(checkBox);
     }
+    public WebElement getGoBack() {
+        return driver.findElement(goBack);
+    }
+    public WebElement getSelectEmail() {
+        return driver.findElement(selectEmail);
+    }
+    public WebElement getDeleteEmail(){
+        return driver.findElement(deleteEmail);
+    }
+    public By getConnectButton1(){
+        return connectButton;
+    }
+    public By getUserNamePanel1(){
+        return userNameSignin;
+    }
+    public By getUserNameSignin1(){
+        return userNameSignin;
+    }
+    public By getPwdPanel1(){
+        return pwdPanel;
+    }
+    public By getPwdButton1(){
+        return pwdButton;
+    }
+    public By getOpenEmail1(){
+        return openEmail;
+    }
+    public By getGetCode1(){
+        return getCode;
+    }
+    public By getGoBack1(){
+        return goBack;
+    }
+    public By getSelectEmail1(){
+        return selectEmail;
+    }
+    public By getDeleteEmail1(){
+        return deleteEmail;
+    }
+
 }

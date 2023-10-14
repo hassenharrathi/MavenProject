@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Aug 19 14:37:36 GMT+01:00 2023","Sat Aug 19 14:38:03 GMT+01:00 2023","26632","","test.login.ForgotPwdTest","","test.login.ForgotPwdTest","t000_setup","t000_setup()",""
+"passed","Sat Aug 19 14:38:07 GMT+01:00 2023","Sat Aug 19 14:39:39 GMT+01:00 2023","92159","","test.login.ForgotPwdTest","","test.login.ForgotPwdTest","t002_getCodeByMail","t002_getCodeByMail()",""
+"passed","Sat Aug 19 14:38:03 GMT+01:00 2023","Sat Aug 19 14:38:07 GMT+01:00 2023","3561","","test.login.ForgotPwdTest","","test.login.ForgotPwdTest","t001_recoverPwd","t001_recoverPwd()",""
