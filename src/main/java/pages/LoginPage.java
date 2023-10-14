@@ -11,24 +11,26 @@ public class LoginPage {
     private final By loginPswPanel = By.id("user_password");
     private final By submitPanel = By.id("user_login");
     private final By popUpPanel = By.xpath("//a[text()='Skip']");
+
+
     public LoginPage(WebDriver driver) {
     this.driver = driver;
 
     }
 
-    public WebElement getLoginEmailPanel() {
+    public WebElement getLoginEmail() {
         return driver.findElement(loginEmailPanel) ;
     }
 
-    public WebElement getLoginPswPanel() {
+    public WebElement getLoginPsw() {
         return driver.findElement(loginPswPanel) ;
     }
 
-    public WebElement getSubmitPanel() {
+    public WebElement getSubmit() {
         return driver.findElement(submitPanel);
     }
 
-    public WebElement getPopUpPanel() {
+    public WebElement getPopUp() {
         return driver.findElement(popUpPanel);
     }
 

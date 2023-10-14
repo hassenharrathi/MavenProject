@@ -17,7 +17,7 @@ public class MenuPage {
         return driver;
     }
 
-    public WebElement getMenuPanel() {
+    public WebElement getMenuPanel() { 
         return driver.findElement(menuPanel);
     }
 
